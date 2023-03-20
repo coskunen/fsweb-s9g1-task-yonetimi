@@ -6,7 +6,11 @@ import TaskHookForm from "./TaskHookForm";
 import PeopleForm from "./PeopleForm";
 import { initialTasks, initialTeam } from "./data";
 
-
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+  export function notify (notifyText) {
+    toast(notifyText)
+  }
 function App() {
   const [tasks, setTasks] = useState(initialTasks);
   const [team, setTeam] = useState(initialTeam);
@@ -25,6 +29,7 @@ function App() {
 
   return (
     <div className="app">
+       <ToastContainer />
       <div className="formColumn">
         <div className="form-container">
           <h2>Yeni Task</h2>
